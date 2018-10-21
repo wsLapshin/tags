@@ -1,0 +1,29 @@
+{
+    "name": "tjventurini/tags",
+    "description": "Tags package for my laravel based homepage.",
+    "type": "package",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Thomas Venturini",
+            "email": "thomas@venturini.codes"
+        }
+    ],
+    "minimum-stability": "dev",
+    "require": {
+        "laravel/framework": "5.5.*",
+        "backpack/crud": "^3.4.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "Tjventurini\\Tags\\": "src/"
+        }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Tjventurini\\Tags\\TagsServiceProvider"
+            ]
+        }
+    }
+}
