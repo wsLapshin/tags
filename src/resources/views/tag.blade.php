@@ -20,20 +20,28 @@
 					$cards = $class::where('name', $tag->name)->firstOrFail()->$relationship()->orderBy('created_at', 'desc')->paginate(6, ['*'], $relationship.'-page');
 				?>
 
-				@foreach($cards as $card)
+				@if (count($cards))
 
-					<div class="card text-center">
-						@if (isset($card->image)) <img class="card-img-top" src="{{ $card->image }}"> @endif
-						<div class="card-body">
-							<h5 class="card-title">{{ $card->name }}</h5>
-							@if (isset($card->intro)) <p class="card-text">{{ $card->intro }}</p> @endif
-							@if (isset($card->description)) <p class="card-text">{{ $card->description }}</p> @endif
-							<a href="{{ $card->getRoute() }}" class="btn btn-primary">{{ trans('tags::tags.read_more') }}</a>
+					@foreach($cards as $card)
+
+						<div class="card text-center">
+							@if (isset($card->image)) <img class="card-img-top" src="{{ $card->image }}"> @endif
+							<div class="card-body">
+								<h5 class="card-title">{{ $card->name }}</h5>
+								@if (isset($card->intro)) <p class="card-text">{{ $card->intro }}</p> @endif
+								@if (isset($card->description)) <p class="card-text">{{ $card->description }}</p> @endif
+								<a href="{{ $card->getRoute() }}" class="btn btn-primary">{{ trans('tags::tags.read_more') }}</a>
+							</div>
 						</div>
-					</div>
 
-				@endforeach
-				
+					@endforeach
+
+				@else
+
+					<p>{{ trans('tags::tags.no_relationships') }}</p>
+
+				@endif
+
 			</div>
 
 			<nav class="text-center" aria-label="Page navigation">
