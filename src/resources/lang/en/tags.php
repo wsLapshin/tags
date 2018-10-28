@@ -33,4 +33,17 @@ return [
 	
 	'read_more' => 'Read more',
 
+	/*
+	 |--------------------------------------------------------------------------
+	 | Pagination
+	 |--------------------------------------------------------------------------
+	 |
+	 | These strings define the text for the previous and next buttons of the
+	 | pagination chunk in this package.
+	 |
+	 */
+	
+	'pagination_previous' => 'Previous',
+	'pagination_next' => 'Next',
+
 ];

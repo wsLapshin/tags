@@ -19,4 +19,8 @@
 
 	</div>
 
+	<nav class="text-center" aria-label="Page navigation">
+		{{ $tags->links('tags::pagination') }}
+	</nav>
+
 @endsection
