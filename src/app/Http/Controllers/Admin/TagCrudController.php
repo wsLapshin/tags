@@ -43,8 +43,8 @@ class TagCrudController extends CrudController
                 'type' => 'browse',
             ],
             [
-                'label' => 'Intro',
-                'name' => 'intro',
+                'label' => 'Description',
+                'name' => 'description',
                 'type' => 'textarea',
             ],
         ], 'update/create/both');
