@@ -12,7 +12,9 @@
     "minimum-stability": "dev",
     "require": {
         "laravel/framework": "5.5.*",
-        "backpack/crud": "^3.4.0"
+        "backpack/crud": "^3.4.0",
+        "cviebrock/eloquent-sluggable": "^4.3",
+        "tjventurini/mini-bootstrap-theme": "dev-master"
     },
     "autoload": {
         "psr-4": {
