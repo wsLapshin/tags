@@ -19,6 +19,14 @@ class TagsServiceProvider extends ServiceProvider
         // tell laravel where to find routes
         $this->loadRoutesFrom(__DIR__.'/routes.php');
 
+        // tell laravel where to find the views
+        $this->loadViewsFrom(__DIR__.'/resources/views', 'tags');
+
+        // tell laravel where to publish views
+        $this->publishes([
+            __DIR__.'/resources/views' => resource_path('views/vendor/tjventurini/tags'),
+        ]);
+
         // tell laravel where to find translations
         $this->loadTranslationsFrom(__DIR__.'/resources/lang', 'tags');
 

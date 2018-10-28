@@ -19,3 +19,17 @@ Route::group([
 	CRUD::resource('tag', 'TagCrudController');
 
 });
+
+Route::group([
+    'prefix'     => 'tags',
+    'middleware' => ['web'],
+    'namespace'  => 'Tjventurini\Tags\App\Http\Controllers',
+], function () {
+
+	// show tags
+	Route::get('/', 'TagController@index')->name('tags');
+
+	// show single tags
+	Route::get('/', 'TagController@tag')->name('tags.tag');
+
+});
