@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class AddIntroColumnToTagsTable extends Migration
+class AddDescriptionColumnToTagsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -14,7 +14,7 @@ class AddIntroColumnToTagsTable extends Migration
     public function up()
     {
         Schema::table('tags', function (Blueprint $table) {
-            $table->text('intro')->nullable();
+            $table->text('description')->nullable();
         });
     }
 
@@ -26,7 +26,7 @@ class AddIntroColumnToTagsTable extends Migration
     public function down()
     {
         Schema::table('tags', function (Blueprint $table) {
-            $table->dropColumn('intro');
+            $table->dropColumn('description');
         });
     }
 }

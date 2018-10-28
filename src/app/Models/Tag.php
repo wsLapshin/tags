@@ -81,7 +81,7 @@ class Tag extends Model
     public function sluggable()
     {
         return [
-            'alias' => [
+            'slug' => [
                 'source' => 'name'
             ]
         ];

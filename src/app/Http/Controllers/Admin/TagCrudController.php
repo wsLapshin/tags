@@ -33,7 +33,7 @@ class TagCrudController extends CrudController
         // ------ CRUD FIELDS
         // $this->crud->addField($options, 'update/create/both');
         // $this->crud->addFields($array_of_arrays, 'update/create/both');
-        $this->crud->removeField('alias', 'create');
+        $this->crud->removeField('slug', 'create');
         // $this->crud->removeField('name', 'update/create/both');
         // $this->crud->removeFields($array_of_names, 'update/create/both');
         $this->crud->addFields([

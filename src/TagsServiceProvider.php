@@ -34,6 +34,9 @@ class TagsServiceProvider extends ServiceProvider
         $this->publishes([
             __DIR__.'/resources/lang' => resource_path('lang/vendor/tags'),
         ], 'lang');
+
+        // include custom factories
+        $this->app->make('Illuminate\Database\Eloquent\Factory')->load(__DIR__ . '/database/factories');
     }
 
     /**

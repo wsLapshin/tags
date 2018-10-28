@@ -30,6 +30,6 @@ Route::group([
 	Route::get('/', 'TagController@index')->name('tags');
 
 	// show single tags
-	Route::get('/', 'TagController@tag')->name('tags.tag');
+	Route::get('/{slug}', 'TagController@tag')->name('tags.tag');
 
 });

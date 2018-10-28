@@ -10,8 +10,8 @@
 				<img class="card-img-top" src="{{ $tag->image }}">
 				<div class="card-body">
 					<h5 class="card-title">{{ $tag->name }}</h5>
-					<p class="card-text">{{ $tag->intro }}</p>
-					<a href="{{ route('tags.tag', ['slug' => $tag->alias]) }}" class="btn btn-primary">{{ trans('tags::tags.read_more') }}</a>
+					<p class="card-text">{{ $tag->description }}</p>
+					<a href="{{ route('tags.tag', ['slug' => $tag->slug]) }}" class="btn btn-primary">{{ trans('tags::tags.read_more') }}</a>
 				</div>
 			</div>
 

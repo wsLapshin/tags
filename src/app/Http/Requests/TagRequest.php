@@ -26,7 +26,7 @@ class TagRequest extends \Backpack\CRUD\app\Http\Requests\CrudRequest
     {
         return [
             'name' => 'required|min:2|max:50',
-            'alias' => 'unique:articles,alias',
+            'slug' => 'unique:tags,slug',
             'image' => 'required|string',
             'intro' => 'required|min:50|max:255',
         ];
