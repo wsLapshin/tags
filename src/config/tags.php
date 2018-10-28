@@ -27,4 +27,21 @@ return [
 	// view to show single article
 	'view_tag' => 'tags::tag',
 
+	/*
+	 |--------------------------------------------------------------------------
+	 | Relationships
+	 |--------------------------------------------------------------------------
+	 |
+	 | In this section you can define other implementations of tags that extend
+	 | the tags model of this package. This way we can list the relationships
+	 | of tags in tag view.
+	 |
+	 */
+	
+	'relationships' => [
+
+		// 'articles' => Tjventurini\Articles\App\Models\Tag::class,
+
+	],
+
 ];

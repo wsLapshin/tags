@@ -46,4 +46,16 @@ return [
 	'pagination_previous' => 'Previous',
 	'pagination_next' => 'Next',
 
+	/*
+	 |--------------------------------------------------------------------------
+	 | Relationships
+	 |--------------------------------------------------------------------------
+	 |
+	 | Title of relationships in tag view.
+	 |
+	 */
+	
+	'relationships' => 'Relationships',
+	'no_relationships' => 'This tag has no relationships.',
+
 ];
