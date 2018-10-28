@@ -19,7 +19,7 @@ class TagController extends Controller
     	$tags = Tag::orderBy('name', 'asc')->paginate(15);
 
     	// return view
-    	return view('tags::tags')
+    	return view(config('vendor.tjventurini.tags.view_tags'))
     		->with('tags', $tags);
     }
 
@@ -28,14 +28,14 @@ class TagController extends Controller
      * @param  Request $request The incomming request
      * @return View 		The view to show tag
      */
-    public function tag(Request $request)
+    public function tag(Request $request, $slug)
     {
-    	// load the tags
-    	$tags = Tag::all();
+    	// load the tag
+    	$tag = Tag::findBySlugOrFail($slug);
 
     	// return view
-    	return view('tags::tags')
-    		->with('tags', $tags);
+    	return view(config('vendor.tjventurini.tags.view_tag'))
+    		->with('tag', $tag);
     }
 
 }
