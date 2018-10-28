@@ -33,8 +33,21 @@ class TagCrudController extends CrudController
         // ------ CRUD FIELDS
         // $this->crud->addField($options, 'update/create/both');
         // $this->crud->addFields($array_of_arrays, 'update/create/both');
+        $this->crud->removeField('alias', 'create');
         // $this->crud->removeField('name', 'update/create/both');
         // $this->crud->removeFields($array_of_names, 'update/create/both');
+        $this->crud->addFields([
+            [
+                'label' => 'Image',
+                'name' => 'image',
+                'type' => 'browse',
+            ],
+            [
+                'label' => 'Intro',
+                'name' => 'intro',
+                'type' => 'textarea',
+            ],
+        ], 'update/create/both');
 
         // ------ CRUD COLUMNS
         // $this->crud->addColumn(); // add a single column, at the end of the stack
@@ -43,6 +56,7 @@ class TagCrudController extends CrudController
         // $this->crud->removeColumns(['column_name_1', 'column_name_2']); // remove an array of columns from the stack
         // $this->crud->setColumnDetails('column_name', ['attribute' => 'value']); // adjusts the properties of the passed in column (by name)
         // $this->crud->setColumnsDetails(['column_1', 'column_2'], ['attribute' => 'value']);
+        $this->crud->removeColumns(['slug', 'image', 'content']); // remove an array of columns from the stack
 
         // ------ CRUD BUTTONS
         // possible positions: 'beginning' and 'end'; defaults to 'beginning' for the 'line' stack, 'end' for the others;

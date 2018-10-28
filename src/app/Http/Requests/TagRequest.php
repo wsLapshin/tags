@@ -25,7 +25,10 @@ class TagRequest extends \Backpack\CRUD\app\Http\Requests\CrudRequest
     public function rules()
     {
         return [
-            'name' => 'required|min:2|max:50'
+            'name' => 'required|min:2|max:50',
+            'alias' => 'unique:articles,alias',
+            'image' => 'required|string',
+            'intro' => 'required|min:50|max:255',
         ];
     }
 
