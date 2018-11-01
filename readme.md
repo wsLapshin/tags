@@ -62,15 +62,41 @@ By now you should be ready to update the backpack admin panel. Open `resources/v
 
 ## Routes
 
-This package provides three routes by default.
+/*
+ |--------------------------------------------------------------------------
+ | Tjventurini\Tags Routes
+ |--------------------------------------------------------------------------
+ |
+ | In this file you will find all routes needed for this package to work in
+ | in the backpack backend as well as the frontend.
+ |
+ */
 
-+ `admin/tag`
-+ `tags`
-+ `tags/{slug}`
+Route::group([
+    'prefix'     => config('backpack.base.route_prefix', 'admin'),
+    'middleware' => ['web', config('backpack.base.middleware_key', 'admin')],
+    'namespace'  => 'Tjventurini\Tags\App\Http\Controllers\Admin',
+], function () {
+
+    CRUD::resource('tag', 'TagCrudController');
+
+});
+
+Route::group([
+    'prefix'     => 'tags',
+    'middleware' => ['web'],
+    'namespace'  => 'Tjventurini\Tags\App\Http\Controllers',
+], function () {
+
+    // show tags
+    Route::get('/', 'TagController@index')->name('tags');
+
+    // show single tags
+    Route::get('/{slug}', 'TagController@tag')->name('tags.tag');
+
+});
 
 ## Views
-
-You can overwrite the package views or you can define your own and change the views that are used in the given routes.
 
 ```
 /*
@@ -88,4 +114,34 @@ You can overwrite the package views or you can define your own and change the vi
 
 // view to show single article
 'view_tag' => 'tags::tag',
+```
+
+# Extending the Tag Model
+
+If you need to add more functionality to the tags model, then you can simply extend the model for your own package. Here is an example implementation from the [tjventurini/articles](https//github.com/tjventurini/articles) package.
+
+```
+<?php
+
+namespace Tjventurini\Articles\App\Models;
+
+use Backpack\CRUD\CrudTrait;
+use Illuminate\Database\Eloquent\Model;
+use Cviebrock\EloquentSluggable\Sluggable;
+use Cviebrock\EloquentSluggable\SluggableScopeHelpers;
+
+class Tag extends \Tjventurini\Tags\App\Models\Tag
+{
+
+    /*
+    |--------------------------------------------------------------------------
+    | RELATIONS
+    |--------------------------------------------------------------------------
+    */
+
+    public function articles()
+    {
+        return $this->belongsToMany('Tjventurini\Articles\App\Models\Article');
+    }
+}
 ```
