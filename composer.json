@@ -16,7 +16,7 @@
         "cviebrock/eloquent-sluggable": "^4.3"
     },
     "require-dev": {
-        "tjventurini/mini-bootstrap-theme": "dev-master"
+        "tjventurini/mini-bootstrap-theme": "^0.0.1"
     },
     "autoload": {
         "psr-4": {
