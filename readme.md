@@ -62,6 +62,7 @@ By now you should be ready to update the backpack admin panel. Open `resources/v
 
 ## Routes
 
+```
 /*
  |--------------------------------------------------------------------------
  | Tjventurini\Tags Routes
@@ -95,6 +96,7 @@ Route::group([
     Route::get('/{slug}', 'TagController@tag')->name('tags.tag');
 
 });
+```
 
 ## Views
 
