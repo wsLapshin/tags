@@ -13,7 +13,9 @@
     "require": {
         "laravel/framework": "5.5.*",
         "backpack/crud": "^3.4.0",
-        "cviebrock/eloquent-sluggable": "^4.3",
+        "cviebrock/eloquent-sluggable": "^4.3"
+    },
+    "require-dev": {
         "tjventurini/mini-bootstrap-theme": "dev-master"
     },
     "autoload": {
