@@ -60,6 +60,8 @@ By now you should be ready to update the backpack admin panel. Open `resources/v
 <li><a href="{{ backpack_url('tag') }}"><i class="fa fa-tag"></i> <span>{{ trans('tags::tags.menu_item') }}</span></a></li>
 ```
 
+![Backpack Admin Panel](https://thomasventurini.com/storage/Bildschirmfoto%20von%20»2018-11-03%2011-57-55«.png)
+
 # Configuration
 
 ## Routes
