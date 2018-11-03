@@ -21,7 +21,7 @@ Route::group([
 });
 
 Route::group([
-    'prefix'     => 'tags',
+    'prefix'     => config('tags.route_prefix', 'tags'),
     'middleware' => ['web'],
     'namespace'  => 'Tjventurini\Tags\App\Http\Controllers',
 ], function () {

@@ -60,4 +60,15 @@ return [
         'description' => 'required|min:50|max:255',
     ],
 
+    /*
+     |--------------------------------------------------------------------------
+     | Route Prefix
+     |--------------------------------------------------------------------------
+     |
+     | In this section you can define the route prefix of this package.
+     |
+     */
+    
+    'route_prefix' => 'tags',
+
 ];
