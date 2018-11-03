@@ -1,13 +1,15 @@
 # Laravel Backpack Tags Package
 
-This package provides tags functionality for my blog <a href="https://laravel.com">laravel</a> based blog.. It requires  <a href="https://backpackforlaravel.com" target="_blank">Backpack for Laravel</a> so you will need to install it.
+This package provides tagging functionality for my <a href="https://laravel.com">laravel</a> based blog. It requires  <a href="https://backpackforlaravel.com" target="_blank">Backpack for Laravel</a> so you will need to install it.
+
++ <a href="https://backpackforlaravel.com/docs/3.4/installation" target="_blank">Installation of Backpack</a>
 
 # Installation
 
-For now the package does not use tags, but the branch `master` will be stable for sure.
+This package is available through <a href="https://packagist.org/packages/tjventurini/tags" target="_blank">packagist</a>. Install it with the following command.
 
 ```
-composer require tjventurini/tags "dev-master"
+composer require tjventurini/tags
 ```
 
 ## Migrations
@@ -116,6 +118,47 @@ Route::group([
 
 // view to show single article
 'view_tag' => 'tags::tag',
+```
+
+## Relationships
+
+```
+/*
+ |--------------------------------------------------------------------------
+ | Relationships
+ |--------------------------------------------------------------------------
+ |
+ | In this section you can define other implementations of tags that extend
+ | the tags model of this package. This way we can list the relationships
+ | of tags in tag view.
+ |
+ */
+
+'relationships' => [
+
+    // 'articles' => Tjventurini\Articles\App\Models\Tag::class,
+
+],
+```
+
+## Validation
+
+```
+/*
+ |--------------------------------------------------------------------------
+ | Validation
+ |--------------------------------------------------------------------------
+ |
+ | In this section you can change the validation rules of the tags request.
+ |
+ */
+
+'rules' => [
+    'name' => 'required|min:2|max:50',
+    'slug' => 'unique:tags,slug',
+    'image' => 'required|string',
+    'description' => 'required|min:50|max:255',
+],
 ```
 
 # Extending the Tag Model
