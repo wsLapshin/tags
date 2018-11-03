@@ -22,7 +22,7 @@ return [
 	 */
 	
 	// view to show all articles
-	'view_tags' => 'tags::all',
+	'view_tags' => 'tags::tags',
 
 	// view to show single article
 	'view_tag' => 'tags::tag',
