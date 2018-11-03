@@ -44,4 +44,20 @@ return [
 
 	],
 
+	/*
+	 |--------------------------------------------------------------------------
+	 | Validation
+	 |--------------------------------------------------------------------------
+	 |
+	 | In this section you can change the validation rules of the tags request.
+	 |
+	 */
+	
+	'rules' => [
+        'name' => 'required|min:2|max:50',
+        'slug' => 'unique:tags,slug',
+        'image' => 'required|string',
+        'description' => 'required|min:50|max:255',
+    ],
+
 ];

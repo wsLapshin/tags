@@ -3,6 +3,7 @@
 namespace Tjventurini\Tags\App\Http\Requests;
 
 use App\Http\Requests\Request;
+use Illuminate\Validation\Rule;
 
 class TagRequest extends \Backpack\CRUD\app\Http\Requests\CrudRequest
 {
@@ -24,12 +25,22 @@ class TagRequest extends \Backpack\CRUD\app\Http\Requests\CrudRequest
      */
     public function rules()
     {
-        return [
+        $rules = config('tags.rules', [
             'name' => 'required|min:2|max:50',
             'slug' => 'unique:tags,slug',
             'image' => 'required|string',
             'description' => 'required|min:50|max:255',
-        ];
+        ]);
+
+        // make exception if this is an update
+        if (request('id', false)) {
+            $rules['slug'] = [
+                Rule::unique('tags','slug')
+                    ->ignore(\Tjventurini\Tags\App\Models\Tag::find(request('id', false))->slug, 'slug'),
+            ];
+        }
+
+        return $rules;
     }
 
     /**
