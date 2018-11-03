@@ -21,7 +21,7 @@ class TagsServiceProvider extends ServiceProvider
 
         // tell laravel where to publish config if the user wants it to
         $this->publishes([
-            __DIR__.'/config' => config_path('vendor/tjventurini'),
+            __DIR__.'/config' => config_path(),
         ], 'config');
 
         // tell laravel where to find the views
@@ -29,7 +29,7 @@ class TagsServiceProvider extends ServiceProvider
 
         // tell laravel where to publish views
         $this->publishes([
-            __DIR__.'/resources/views' => resource_path('views/vendor/tjventurini/tags'),
+            __DIR__.'/resources/views' => resource_path('views/vendor/tags'),
         ], 'views');
 
         // tell laravel where to find translations

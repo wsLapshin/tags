@@ -19,7 +19,7 @@ class TagController extends Controller
     	$tags = Tag::orderBy('name', 'asc')->paginate(15);
 
     	// return view
-    	return view(config('vendor.tjventurini.tags.view_tags'))
+    	return view(config('tags.view_tags'))
     		->with('tags', $tags);
     }
 
@@ -34,7 +34,7 @@ class TagController extends Controller
     	$tag = Tag::findBySlugOrFail($slug);
 
     	// return view
-    	return view(config('vendor.tjventurini.tags.view_tag'))
+    	return view(config('tags.view_tag'))
     		->with('tag', $tag);
     }
 

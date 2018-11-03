@@ -8,9 +8,9 @@
 
 	<h2>{{ trans('tags::tags.relationships') }}</h2>
 
-	@if (count(config('vendor.tjventurini.tags.relationships')))
+	@if (count(config('tags.relationships')))
 
-		@foreach (config('vendor.tjventurini.tags.relationships') as $relationship => $class)
+		@foreach (config('tags.relationships') as $relationship => $class)
 
 			<h3>{{ ucfirst($relationship) }}</h3>
 
