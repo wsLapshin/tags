@@ -36,6 +36,8 @@ return [
 	 | the tags model of this package. This way we can list the relationships
 	 | of tags in tag view.
 	 |
+	 | method => model_class
+	 |
 	 */
 	
 	'relationships' => [
