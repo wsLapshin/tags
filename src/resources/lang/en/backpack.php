@@ -14,6 +14,6 @@ return [
 
 	'open_tag' => 'Open Tag',
 	'report_issue' => 'Report issue',
-	'go_to_tags_documentation' => 'Documentation',
+	'go_to_documentation' => 'Documentation',
 
 ];
