@@ -32,6 +32,11 @@ class TagsServiceProvider extends ServiceProvider
             __DIR__.'/resources/views' => resource_path('views/vendor/tags'),
         ], 'views');
 
+        // tell laravel where to publish backpack resources
+        $this->publishes([
+            __DIR__.'/resources/views/vendor/backpack/crud/buttons' => resource_path('views/vendor/backpack/crud/buttons'),
+        ], 'backpack');
+
         // tell laravel where to find translations
         $this->loadTranslationsFrom(__DIR__.'/resources/lang', 'tags');
 

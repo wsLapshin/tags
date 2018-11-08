@@ -63,6 +63,8 @@ class TagCrudController extends CrudController
         // $this->crud->addButton($stack, $name, $type, $content, $position); // add a button; possible types are: view, model_function
         // $this->crud->addButtonFromModelFunction($stack, $name, $model_function_name, $position); // add a button whose HTML is returned by a method in the CRUD model
         // $this->crud->addButtonFromView($stack, $name, $view, $position); // add a button whose HTML is in a view placed at resources\views\vendor\backpack\crud\buttons
+        $this->crud->addButtonFromView('line', 'open_tag', 'open_tag', 'end'); // add a button whose HTML is in a view placed at resources\views\vendor\backpack\crud\buttons
+        $this->crud->addButtonFromView('top', 'github_tags', 'github_tags', 'end'); // add a button whose HTML is in a view placed at resources\views\vendor\backpack\crud\buttons
         // $this->crud->removeButton($name);
         // $this->crud->removeButtonFromStack($name, $stack);
         // $this->crud->removeAllButtons();
@@ -70,6 +72,7 @@ class TagCrudController extends CrudController
 
         // ------ CRUD ACCESS
         // $this->crud->allowAccess(['list', 'create', 'update', 'reorder', 'delete']);
+        $this->crud->allowAccess(['open_tag', 'github_tags']);
         // $this->crud->denyAccess(['list', 'create', 'update', 'reorder', 'delete']);
 
         // ------ CRUD REORDER
