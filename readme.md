@@ -60,7 +60,13 @@ By now you should be ready to update the backpack admin panel. Open `resources/v
 <li><a href="{{ backpack_url('tag') }}"><i class="fa fa-tag"></i> <span>{{ trans('tags::tags.menu_item') }}</span></a></li>
 ```
 
-![Backpack Admin Panel](https://thomasventurini.com/storage/Bildschirmfoto%20von%20»2018-11-03%2015-36-13«.png)
+The last thing to do is to publish the buttons needed for the backpack crud.
+
+```
+php artisan vendor:publish --provider="Tjventurini\Tags\TagsServiceProvider" --tag=backpack
+```
+
+![Backpack Admin Panel](https://thomasventurini.com/storage/Bildschirmfoto%20von%20»2018-11-08%2019-27-52«.png)
 
 # Configuration
 
