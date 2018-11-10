@@ -73,4 +73,16 @@ return [
     
     'route_prefix' => 'tags',
 
+    /*
+     |--------------------------------------------------------------------------
+     | Disable Routes
+     |--------------------------------------------------------------------------
+     |
+     | In this section you can disable routes from this page.
+     |
+     */
+    
+    'disable_route_tags' => false,
+    'disable_route_tag' => false,
+
 ];

@@ -112,6 +112,7 @@ class TagCrudController extends CrudController
         // $this->crud->addClause('withoutGlobalScope', VisibleScope::class);
         // $this->crud->with(); // eager load relationships
         // $this->crud->orderBy();
+        $this->crud->orderBy('name', 'asc');
         // $this->crud->groupBy();
         // $this->crud->limit();
     }

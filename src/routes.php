@@ -27,9 +27,13 @@ Route::group([
 ], function () {
 
 	// show tags
-	Route::get('/', 'TagController@index')->name('tags');
+    if (!config('tags.disable_route_tags', false)) {
+	   Route::get('/', 'TagController@index')->name('tags');
+    }
 
 	// show single tags
-	Route::get('/{slug}', 'TagController@tag')->name('tags.tag');
+    if (!config('tags.disable_route_tag', false)) {
+	   Route::get('/{slug}', 'TagController@tag')->name('tags.tag');
+    }
 
 });
