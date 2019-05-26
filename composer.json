@@ -1,5 +1,5 @@
 {
-    "name": "tjventurini/tags",
+    "name": "wslapshin/tags",
     "description": "Tags package for my laravel based homepage.",
     "keywords": ["tjventurini", "blog", "laravel", "crud", "tags"],
     "type": "package",
